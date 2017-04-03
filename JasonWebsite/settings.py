@@ -23,9 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ewdoi+pt2q1f&@f$h=u)ug%8b_lxle-!a!wq+0xn27_g+$1dvl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '.elasticbeanstalk.com',
+    '127.0.0.1',
+    'jasonthompson.me'
+    ]
 
 
 # Application definition
@@ -121,6 +125,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILE_DIRS = (
-    os.path.join(BASE_DIR, 'JasonWebsite','static'),
-)
+#STATICFILE_DIRS = (
+#    os.path.join(BASE_DIR, 'JasonWebsite','static'),
+#)
+
+STATIC_ROOT= 'static'
