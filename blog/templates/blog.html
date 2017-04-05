@@ -54,30 +54,25 @@
       <div class="blog-header">
         <h1 class="blog-title">Jason's Blog</h1>
         <p class="lead blog-description">The official blog where I talk about things... and stuff...</p>
+
       </div>
 
       <div class="row">
 
         <div class="col-sm-8 blog-main">
 
+          {% for post in posts%}
           <div class="blog-post">
-            <h2 class="blog-post-title">First Non-integrated Blog Post</h2>
-            <p class="blog-post-meta">April 3, 2017 by <a href="#">Jason T.</a></p>
 
-            <p>This is my first non-integrated blog post. It's a start...</p>
 
-          </div><!-- /.blog-post -->
 
-          <div class="blog-post">
-            
-            {% for post in posts%}
-              <h2>{{post.title}}</h2>
-            <h2 class="blog-post-title">by {{post.author}}</h2>
+            <h2 class="blog-post-title">{{post.title}}</h2>
+            <h2 class="blog-post-title"><small>by {{post.author}}</small></h2>
             <p class="blog-post-meta">{{post.createdDate}}</p>
             <p>{{post.text}}</p>
-            {% endfor %}
-          </div><!-- /.blog-post -->
 
+          </div><!-- /.blog-post -->
+          {% endfor %}
 
           <nav>
             <ul class="pager">

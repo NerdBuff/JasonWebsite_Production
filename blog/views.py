@@ -3,4 +3,12 @@ from .models import Post
 # Create your views here.
 
 def blog(request):
-    return render (request, "blog.html")
+
+    posts = Post.objects.exclude(createdDate__isnull=True)
+
+    context = {
+        'posts': posts,
+        'name' : 'test',
+    }
+
+    return render (request, "blog.html", context)
