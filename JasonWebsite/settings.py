@@ -28,7 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '.elasticbeanstalk.com',
     '127.0.0.1',
-    'jasonthompson.me'
+    '.jasonthompson.me',
+    'www.jasonthompson.me',
     ]
 
 

@@ -11,7 +11,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Blog Template for Bootstrap</title>
+    <title>Jason Thompson - Blog</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}" >
@@ -35,6 +35,7 @@
 
   <body>
 
+
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
@@ -46,6 +47,7 @@
         </nav>
       </div>
     </div>
+
 
     <div class="container">
 
@@ -65,6 +67,17 @@
             <p>This is my first non-integrated blog post. It's a start...</p>
 
           </div><!-- /.blog-post -->
+
+          <div class="blog-post">
+            
+            {% for post in posts%}
+              <h2>{{post.title}}</h2>
+            <h2 class="blog-post-title">by {{post.author}}</h2>
+            <p class="blog-post-meta">{{post.createdDate}}</p>
+            <p>{{post.text}}</p>
+            {% endfor %}
+          </div><!-- /.blog-post -->
+
 
           <nav>
             <ul class="pager">
@@ -100,13 +113,15 @@
     </div><!-- /.container -->
 
     <footer class="blog-footer">
-      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-      <p>
+      <!--<p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>-->
+
+
         <a href="#">Back to top</a>
-      <p><a href="http://aws.amazon.com/what-is-cloud-computing"><img src="http://awsmedia.s3.amazonaws.com/AWS_Logo_PoweredBy_127px.png" alt="Powered by AWS Cloud Computing"></a>
-        <a href="http://www.python.org"><img src="https://www.python.org/static/community_logos/python-powered-w-140x56.png"></a>
-      </p>
-      </p>
+        <p>Built on and with:</p>
+        <p><a href="http://aws.amazon.com/what-is-cloud-computing"><img src="http://awsmedia.s3.amazonaws.com/AWS_Logo_PoweredBy_127px.png" alt="Powered by AWS Cloud Computing"></a>
+          <a href="http://www.python.org"><img src="https://www.python.org/static/img/python-logo.png"></a>
+        </p>
+
     </footer>
 
 
@@ -114,9 +129,9 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{%static 'assets/js/vendor/jquery.min.js'%}"><\/script>')</script>
+    <script src="{%static 'dist/js/bootstrap.min.js'%}"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="{%static 'assets/js/ie10-viewport-bug-workaround.js'%}"></script>
   </body>
 </html>
