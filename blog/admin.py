@@ -6,8 +6,6 @@ from .models import Post
 
 #@admin.register(Post)
 
-
-
 class BlogAdmin(admin.ModelAdmin):
     fieldsets = [
         ("Blog Post Details",{"fields": ["title", "author","createdDate","publishedDate","uid"]}),

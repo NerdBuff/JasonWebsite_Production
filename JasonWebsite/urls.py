@@ -18,9 +18,11 @@ from django.contrib import admin
 
 from resume.views import homepage
 from blog.views import blog
+from about.views import about
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', homepage, name='homepage'), #Specifies the name of the view (homepage); regular expression ^$ matches when nothing is in the url, so jasonthompson.me
     url(r'^blog/$', blog, name='blog'),
+    url(r'^about/$', about, name='about'),
 ]
